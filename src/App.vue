@@ -9,7 +9,7 @@
 //   // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 //   greetMsg.value = await invoke("greet", { name: name.value });
 // }
-import { Button } from '@/components/ui/button'
+
 </script>
 
 <template>
