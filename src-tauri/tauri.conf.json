@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "mousika",
+  "productName": "Mousika",
   "version": "0.1.0",
   "identifier": "com.user.mousika",
   "build": {
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "mousika",
+        "title": "Mousika",
         "width": 1600,
         "height": 900
       }

@@ -9,12 +9,12 @@
 //   // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 //   greetMsg.value = await invoke("greet", { name: name.value });
 // }
+import LoadingPixel from "@/components/LoadingPixel.vue";
 
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline bg-red-400">
-    Hello world!
-  </h1>
-  <Button>Click me</Button>
+  <div class="loading-pixel w-screen h-screen flex justify-center items-center ">
+    <LoadingPixel />
+  </div>
 </template>
