@@ -18,10 +18,13 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar'
 import { Switch } from '@/components/ui/switch'
+import { useColorMode } from '@vueuse/core'
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: "icon",
 })
+
+const color = useColorMode()
 
 // This is sample data
 const data = {
@@ -219,8 +222,8 @@ const { setOpen } = useSidebar()
             {{ activeItem.title }}
           </div>
           <Label class="flex items-center gap-2 text-sm">
-            <span>Unreads</span>
-            <Switch class="shadow-none" />
+            <span>Mode:{{ color }}</span>
+            <Switch class="shadow-none" @click="color = color === 'light' ? 'dark' : 'light'"/>
           </Label>
         </div>
         <SidebarInput placeholder="Type to search..." />
@@ -249,3 +252,34 @@ const { setOpen } = useSidebar()
     </Sidebar>
   </Sidebar>
 </template>
+
+
+<style scoped>
+::-webkit-scrollbar {
+  height: 6px;
+  margin: 0 12px;
+}
+::-webkit-scrollbar-track {
+  background-color: #2a2b2d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+* {  
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.2s ease;
+}
+*:hover {  
+  scrollbar-color: #d3d3d345 transparent;
+}
+
+</style>
