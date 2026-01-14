@@ -51,11 +51,11 @@ import LoadingPixel from "@/components/LoadingPixel.vue"
         </Breadcrumb>
       </header>
       <div class="flex flex-col gap-4 p-4 ">
-        <div
+        <!-- <div
           v-for="index in 10"
           :key="index"
           class="h-12 rounded-lg bg-muted/50"
-        />
+        /> -->
       </div>
       <LoadingPixel/>
     </SidebarInset>

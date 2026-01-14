@@ -4,15 +4,15 @@
 <template>
     <div class="load-container">
         <div class="loader">
-            <span class="loader-block"></span>
-            <span class="loader-block"></span>
-            <span class="loader-block"></span>
-            <span class="loader-block"></span>
-            <span class="loader-block"></span>
-            <span class="loader-block"></span>
-            <span class="loader-block"></span>
-            <span class="loader-block"></span>
-            <span class="loader-block"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
+            <span class="loader-block shadow-lg shadow-green-200"></span>
         </div>
     </div>
 </template>
