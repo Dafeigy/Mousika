@@ -17,10 +17,10 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 
 
-:root{
+*{
 --full: 90px;
 --single: 30px;
 --double: 60px;
@@ -32,8 +32,8 @@
 
 .load-container{
   /* // padding: 100px; */
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   position: relative;
   background: var(--bg);
