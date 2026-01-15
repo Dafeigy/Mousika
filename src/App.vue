@@ -10,11 +10,12 @@
 //   greetMsg.value = await invoke("greet", { name: name.value });
 // }
 import LoadingPixel from "@/components/LoadingPixel.vue";
-
+import Main from "@/pages/Main.vue";
 </script>
 
 <template>
-  <div class="loading-pixel w-screen h-screen flex justify-center items-center ">
-    <LoadingPixel />
+  <div class="w-screen h-screen flex justify-center items-center ">
+    <!-- <LoadingPixel /> -->
+    <Main />
   </div>
 </template>

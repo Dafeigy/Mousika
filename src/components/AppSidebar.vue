@@ -18,16 +18,19 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar'
 import { Switch } from '@/components/ui/switch'
+import { useColorMode } from '@vueuse/core'
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: "icon",
 })
 
+const color = useColorMode()
+
 // This is sample data
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Mousika",
+    email: "1070642765@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
@@ -172,7 +175,7 @@ const { setOpen } = useSidebar()
                   <Command class="size-4" />
                 </div>
                 <div class="grid flex-1 text-left text-sm leading-tight">
-                  <span class="truncate font-medium">Acme Inc</span>
+                  <span class="truncate font-medium">Mousika</span>
                   <span class="truncate text-xs">Enterprise</span>
                 </div>
               </a>
@@ -219,15 +222,15 @@ const { setOpen } = useSidebar()
             {{ activeItem.title }}
           </div>
           <Label class="flex items-center gap-2 text-sm">
-            <span>Unreads</span>
-            <Switch class="shadow-none" />
+            <span>{{ color }}</span>
+            <Switch class="shadow-none transition-all duration-600" @click="color = color === 'light' ? 'dark' : 'light'"/>
           </Label>
         </div>
         <SidebarInput placeholder="Type to search..." />
       </SidebarHeader>
-      <SidebarContent>
-        <SidebarGroup class="px-0">
-          <SidebarGroupContent>
+      <SidebarContent class="w-[calc(100%-5px)]">
+        <SidebarGroup class="p-0 ">
+          <SidebarGroupContent class="">
             <a
               v-for="mail in mails"
               :key="mail.email"
@@ -249,3 +252,34 @@ const { setOpen } = useSidebar()
     </Sidebar>
   </Sidebar>
 </template>
+
+
+<style scoped>
+::-webkit-scrollbar {
+  height: 6px;
+  margin: 0 12px;
+}
+::-webkit-scrollbar-track {
+  background-color: #2a2b2d;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+* {  
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.2s ease;
+}
+*:hover {  
+  scrollbar-color: #d3d3d345 transparent;
+}
+
+</style>
