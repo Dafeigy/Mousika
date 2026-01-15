@@ -2,8 +2,8 @@
 
 </script>
 <template>
-    <div class="load-container w-full h-full flex justify-center items-center relative">
-        <div class="loader aspect-square w-[21px] absolute">
+    <div class="load-container aspect-square flex justify-center items-center relative">
+        <div class="loader aspect-square w-full absolute">
             <span class="loader-block absolute top-0 left-0 inline-block w-1/3 aspect-square bg-[#96db6e] opacity-0 shadow-lg translate-x-0"></span>
             <span class="loader-block absolute top-0 left-0 inline-block w-1/3 aspect-square bg-[#96db6e] opacity-0 shadow-lg translate-x-full"></span>
             <span class="loader-block absolute top-0 left-0 inline-block w-1/3 aspect-square bg-[#96db6e] opacity-0 shadow-lg translate-x-[200%]"></span>
