@@ -164,7 +164,7 @@ const { setOpen } = useSidebar()
     <!-- This will make the sidebar appear as icons. -->
     <Sidebar
       collapsible="none"
-      class="w-[calc(var(--sidebar-width-icon)+1px)]! border-r"
+      class="w-[calc(var(--sidebar-width-icon)+1px)]! border-none"
     >
       <SidebarHeader>
         <SidebarMenu>

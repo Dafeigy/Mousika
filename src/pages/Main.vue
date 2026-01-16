@@ -28,9 +28,10 @@ import LoadingPixel from "@/components/LoadingPixel.vue"
       '--sidebar-width': '350px',
     }"
   >
-    <AppSidebar class="mt-8"/>
-    <SidebarInset class="mt-8">
-      <header class="bg-background sticky top-0 flex shrink-0 items-center gap-2 border-b p-4 ">
+    <AppSidebar class=" border-none"/>
+    <SidebarInset class="h-[calc(100%-32px)] mt-8">
+      <Header class="fixed"/>
+      <header class="bg-sidebar sticky top-0 flex shrink-0 items-center gap-2 p-4 ">
         <SidebarTrigger class="-ml-1" />
         <Separator
           orientation="vertical"

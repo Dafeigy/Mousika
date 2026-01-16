@@ -19,14 +19,14 @@ const close = async () => {
 </script>
 
 <template>
-  <div class="title-bar w-full h-8 flex items-center justify-between bg-transparent select-none fixed">
+  <div class="title-bar w-full h-8 flex items-center justify-between bg-sidebar select-none  fixed">
     <!-- 左侧区域 - 用于拖动窗口 -->
     <div class="w-1/3 h-full"></div>
     
     <!-- 中间区域 - 标题 -->
-    <div class="title text-center text-sm w-1/3 font-light flex justify-center items-center">
-        <LoadingPixel class="w-[18px] mx-2"/>
-        <p>Mousika</p>
+    <div class="w-[140px] bg-primary rounded-md rounded-br-lg rounded-bl-lg text-secondary h-[80%] title text-center text-sm font-light flex justify-center items-center">
+        <LoadingPixel class="w-[15px] mx-2"/>
+        <p class="px-2">Mousika</p>
     </div>
     
     <!-- 右侧区域 - 窗口控制按钮 -->

@@ -9,13 +9,13 @@
 //   // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 //   greetMsg.value = await invoke("greet", { name: name.value });
 // }
-import LoadingPixel from "@/components/LoadingPixel.vue";
+
 import Header from '@/components/Header.vue'
 import Main from "@/pages/Main.vue";
 </script>
 
 <template>
-  <div class="w-screen h-screen flex justify-center ">
+  <div class="w-screen h-screen flex justify-center bg-transparent">
     <!-- <LoadingPixel /> -->
      <Header class="fixed"/>
     <Main />
