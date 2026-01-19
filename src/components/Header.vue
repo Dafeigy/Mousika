@@ -2,7 +2,8 @@
 import { Minimize, Maximize2, X } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
 import { getCurrentWindow  } from "@tauri-apps/api/window";
-import LoadingPixel from "@/components/LoadingPixel.vue"
+// import LoadingPixel from "@/components/LoadingPixel.vue"
+import TopStatus from "@/components/TopStatus.vue";
 const appWindow = getCurrentWindow();
 
 const minimize = async() => {
@@ -24,10 +25,7 @@ const close = async () => {
     <div class="w-1/3 h-full"></div>
     
     <!-- 中间区域 - 标题 -->
-    <div class="w-[140px] bg-primary rounded-md rounded-br-lg rounded-bl-lg text-secondary h-[80%] title text-center text-sm font-light flex justify-center items-center">
-        <LoadingPixel class="w-[15px] mx-2"/>
-        <p class="px-2">Mousika</p>
-    </div>
+    <TopStatus />
     
     <!-- 右侧区域 - 窗口控制按钮 -->
     <div class="window-controls flex justify-end items-center h-full w-1/3">

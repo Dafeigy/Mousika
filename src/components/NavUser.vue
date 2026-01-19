@@ -5,6 +5,7 @@ import {
   ChevronsUpDown,
   CreditCard,
   LogOut,
+  Settings2,
   Sparkles,
 } from "lucide-vue-next"
 
@@ -96,8 +97,8 @@ const { isMobile } = useSidebar()
               Account
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <CreditCard />
-              Billing
+              <Settings2 />
+              Settings
             </DropdownMenuItem>
             <DropdownMenuItem>
               <Bell />
