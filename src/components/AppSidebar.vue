@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { SidebarProps } from '@/components/ui/sidebar'
-import { ArchiveX, Command, File, Inbox, Send, Trash2 } from "lucide-vue-next"
+import { ArchiveX, Command, File, Inbox, Send, Settings, Trash2 } from "lucide-vue-next"
 import { h, ref } from "vue"
+import { useRouter } from 'vue-router'
 import NavUser from '@/components/NavUser.vue'
 import { Label } from '@/components/ui/label'
 import DeepseekIcon from '@/assets/Icons/deepseek-color.svg'
@@ -21,6 +22,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
+  SidebarTrigger,
+  SidebarProvider
 } from '@/components/ui/sidebar'
 import { Switch } from '@/components/ui/switch'
 import { useColorMode } from '@vueuse/core'
@@ -30,6 +33,7 @@ const props = withDefaults(defineProps<SidebarProps>(), {
 })
 
 const color = useColorMode()
+const router = useRouter()
 
 // This is sample data
 const data = {
@@ -41,31 +45,31 @@ const data = {
   navMain: [
     {
       title: "Deepseek",
-      url: "#",
+      url: "/deepseek",
       icon: DeepseekIcon,
       isActive: true,
     },
     {
       title: "Qwen",
-      url: "#",
+      url: "/qwen",
       icon: QwenIcon,
       isActive: false,
     },
     {
       title: "GLM",
-      url: "#",
+      url: "/glm",
       icon: zhipuIcon,
       isActive: false,
     },
     {
       title: "Kimi",
-      url: "#",
+      url: "/kimi",
       icon: KimiIcon,
       isActive: false,
     },
     {
       title: "Volcengine",
-      url: "#",
+      url: "/volcengine",
       icon: VolcengineIcon,
       isActive: false,
     },
@@ -167,10 +171,7 @@ const { setOpen } = useSidebar()
     <!-- This is the first sidebar -->
     <!-- We disable collapsible and adjust width to icon. -->
     <!-- This will make the sidebar appear as icons. -->
-    <Sidebar
-      collapsible="none"
-      class="w-[calc(var(--sidebar-width-icon)+1px)]! border-none"
-    >
+    <Sidebar collapsible="none" class="w-[calc(var(--sidebar-width-icon)+1px)]! border-none">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -202,6 +203,7 @@ const { setOpen } = useSidebar()
                     const mail = data.mails.sort(() => Math.random() - 0.5)
                     mails = mail.slice(0, Math.max(5, Math.floor(Math.random() * 10) + 1))
                     setOpen(true)
+                    router.push(item.url)
                   }"
                 >
                   <img :src="item.icon" srcset="" :class="{'dark:invert-[90%]': item.title==='Kimi'}">
@@ -254,7 +256,9 @@ const { setOpen } = useSidebar()
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
+    
   </Sidebar>
+  
 </template>
 
 

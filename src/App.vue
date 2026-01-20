@@ -17,7 +17,7 @@ import Main from "@/pages/Main.vue";
 <template>
   <div class="w-screen h-screen flex justify-center bg-transparent">
     <!-- <LoadingPixel /> -->
-     <Header class="fixed"/>
+    <Header class="fixed z-10"/>
     <Main />
   </div>
 </template>
