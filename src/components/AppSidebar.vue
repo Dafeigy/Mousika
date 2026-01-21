@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SidebarProps } from '@/components/ui/sidebar'
 import { ArchiveX, Command, File, Inbox, Send, Settings, Trash2 } from "lucide-vue-next"
-import { h, ref } from "vue"
+import { computed, h, ref } from "vue"
 import { useRouter } from 'vue-router'
 import NavUser from '@/components/NavUser.vue'
 import { Label } from '@/components/ui/label'
@@ -23,11 +23,10 @@ import {
   SidebarMenuItem,
   useSidebar,
   SidebarTrigger,
-  SidebarProvider
 } from '@/components/ui/sidebar'
 import { Switch } from '@/components/ui/switch'
 import { useColorMode } from '@vueuse/core'
-
+import {ChevronLeft, ChevronRight} from "lucide-vue-next"
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: "icon",
 })
@@ -161,6 +160,7 @@ const data = {
 const activeItem = ref(data.navMain[0])
 const mails = ref(data.mails)
 const { setOpen } = useSidebar()
+const state = ref(useSidebar().state);
 </script>
 
 <template>
@@ -232,7 +232,7 @@ const { setOpen } = useSidebar()
             <Switch class="shadow-none transition-all duration-600" @click="color = color === 'light' ? 'dark' : 'light'"/>
           </Label>
         </div>
-        <SidebarInput placeholder="Type to search..." />
+        <!-- <SidebarInput placeholder="Type to search..." /> -->
       </SidebarHeader>
       <SidebarContent class="w-[calc(100%-5px)]">
         <SidebarGroup class="p-0 ">
@@ -258,7 +258,12 @@ const { setOpen } = useSidebar()
     </Sidebar>
     
   </Sidebar>
-  
+  <div class="flex h-full justify-center items-center bg-background w-5">
+        <SidebarTrigger class="h-1/18 rounded-none rounded-r-lg border border-l-sidebar border-r- -translate-x-1/10 z-11 bg-sidebar opacity-0 hover:opacity-100 hover:bg-sidebar hover:text-foreground"  size="sm">
+          <ChevronLeft class="w-2 h-2" v-if="state==='expanded'"/>
+          <ChevronRight class="w-2 h-2" v-else/>
+        </SidebarTrigger>
+    </div>
 </template>
 
 

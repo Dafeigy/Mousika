@@ -12,9 +12,11 @@ import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar"
 import ModelSettings from "@/components/ModelSettings.vue"
-import {PanelLeft} from "lucide-vue-next"
+
+
 </script>
 
 <template class="w-full h-full">
@@ -22,15 +24,13 @@ import {PanelLeft} from "lucide-vue-next"
     :style="{
       '--sidebar-width': '350px',
     }"
-    class="w-full "
+    class="w-full flex flex-row"
   >
     <AppSidebar class="border-none"/>
-    <SidebarInset class="h-[calc(100%-32px)] mt-8 flex">
+    
+    <SidebarInset class="h-[calc(100%-32px)] mt-8 flex-ml-5 -ml-5 ">
       <div class="flex flex-col h-full">
-        <header class="bg-sidebar sticky top-0 flex shrink-0 items-center gap-2 p-4">
-        <SidebarTrigger class="-ml-1">
-          <PanelLeft class="h-4 w-4"/>
-        </SidebarTrigger>
+        <header class="bg-sidebar sticky top-0 flex shrink-0 items-center gap-2 p-2 -mx-5 z-2">
         <Separator
           orientation="vertical"
           class="mr-2 data-[orientation=vertical]:h-4"
@@ -43,9 +43,8 @@ import {PanelLeft} from "lucide-vue-next"
         </div >
       
       </header>
-      <div class="flex flex-1 flex">
+      <div class="flex flex-1">
         <router-view />
-        
       </div>
       </div>
     </SidebarInset>
