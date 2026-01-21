@@ -11,8 +11,6 @@ import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger,
-  useSidebar,
 } from "@/components/ui/sidebar"
 import ModelSettings from "@/components/ModelSettings.vue"
 
@@ -49,5 +47,7 @@ import ModelSettings from "@/components/ModelSettings.vue"
       </div>
     </SidebarInset>
   </SidebarProvider>
+  <SidebarProvider class="z-0 w-auto bg-sidebar">
   <ModelSettings/>
+  </SidebarProvider>
 </template>
