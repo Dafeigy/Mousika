@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { SidebarProps } from '@/components/ui/sidebar'
-import { ArchiveX, Command, File, Inbox, Send, Settings, Trash2 } from "lucide-vue-next"
+import { Sun, Command, Moon, Inbox, Send, Settings, Trash2 } from "lucide-vue-next"
 import { computed, h, ref } from "vue"
 import { useRouter } from 'vue-router'
 import NavUser from '@/components/NavUser.vue'
-import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
 import DeepseekIcon from '@/assets/Icons/deepseek-color.svg'
 import QwenIcon from '@/assets/Icons/qwen-color.svg'
 import zhipuIcon from '@/assets/Icons/zhipu-color.svg'
@@ -215,6 +215,10 @@ const state = ref(useSidebar().state);
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
+        <Button class="" variant="ghost" size="sm" @click="color = color === 'light' ? 'dark' : 'light'">
+          <Sun v-if="color == 'dark'"/>
+          <Moon v-else/>
+        </Button>
         <NavUser :user="data.user" />
       </SidebarFooter>
     </Sidebar>
@@ -227,10 +231,7 @@ const state = ref(useSidebar().state);
           <div class="text-base font-medium text-foreground">
             {{ activeItem.title }}
           </div>
-          <Label class="flex items-center gap-2 text-sm">
-            <span>{{ color }}</span>
-            <Switch class="shadow-none transition-all duration-600" @click="color = color === 'light' ? 'dark' : 'light'"/>
-          </Label>
+          
         </div>
         <!-- <SidebarInput placeholder="Type to search..." /> -->
       </SidebarHeader>
