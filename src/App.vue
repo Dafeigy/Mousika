@@ -15,7 +15,7 @@ import Main from "@/pages/Main.vue";
 </script>
 
 <template>
-  <div class="w-screen h-screen flex justify-center bg-transparent">
+  <div class="w-screen h-screen flex justify-center bg-transparent overflow-hidden">
     <!-- <LoadingPixel /> -->
     <Header class="fixed z-10"/>
     <Main />

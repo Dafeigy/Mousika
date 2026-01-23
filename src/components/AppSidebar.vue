@@ -233,7 +233,7 @@ const state = ref(useSidebar().state);
           </div>
           
         </div>
-        <!-- <SidebarInput placeholder="Type to search..." /> -->
+        <SidebarInput placeholder="Type to search..." />
       </SidebarHeader>
       <SidebarContent class="w-[calc(100%-5px)]">
         <SidebarGroup class="p-0 ">
@@ -259,12 +259,12 @@ const state = ref(useSidebar().state);
     </Sidebar>
     
   </Sidebar>
-  <div class="flex h-full justify-center items-center bg-background w-5">
+  <!-- <div class="flex h-full justify-center items-center bg-background w-5">
         <SidebarTrigger class="h-1/18 rounded-none rounded-r-lg border border-l-sidebar border-r- -translate-x-1/10 z-11 bg-sidebar opacity-0 hover:opacity-100 hover:bg-sidebar hover:text-foreground"  size="sm">
           <ChevronLeft class="w-2 h-2" v-if="state==='expanded'"/>
           <ChevronRight class="w-2 h-2" v-else/>
         </SidebarTrigger>
-    </div>
+  </div> -->
 </template>
 
 

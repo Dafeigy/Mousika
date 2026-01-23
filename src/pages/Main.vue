@@ -26,7 +26,7 @@ import ModelSettings from "@/components/ModelSettings.vue"
   >
     <AppSidebar class="border-none"/>
     
-    <SidebarInset class="h-[calc(100%-32px)] mt-8 flex-ml-5 -ml-5 ">
+    <SidebarInset class="h-[calc(100%-32px)] mt-8 flex px-4">
       <div class="flex flex-col h-full">
         <header class="bg-sidebar sticky top-0 flex shrink-0 items-center gap-2 p-2 -mx-5 z-2">
         <Separator
@@ -41,7 +41,7 @@ import ModelSettings from "@/components/ModelSettings.vue"
         </div >
       
       </header>
-      <div class="flex flex-1">
+      <div class="flex justify-center h-[95%]">
         <router-view />
       </div>
       </div>
